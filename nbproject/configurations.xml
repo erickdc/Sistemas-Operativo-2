@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="drivers">
+        <in>ide.c</in>
+        <in>screen.c</in>
+      </df>
+      <df name="kernel">
+        <in>ApiSyscall.c</in>
+        <in>IFat16.h</in>
+        <in>MemoryAllocator.c</in>
+        <in>SyscallHandler.c</in>
+        <in>gdt.c</in>
+        <in>idt.c</in>
+        <in>irq.c</in>
+        <in>isrs.c</in>
+        <in>keyboard.h</in>
+        <in>low_level.c</in>
+        <in>main.c</in>
+        <in>mem.c</in>
+        <in>mem_mgmt.c</in>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <flagsDictionary>
+        <element flagsID="0" commonFlags="-O1 -ffreestanding -std=gnu99"/>
+      </flagsDictionary>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir></buildCommandWorkingDir>
+          <buildCommand>make</buildCommand>
+          <cleanCommand>make clean</cleanCommand>
+          <executablePath></executablePath>
+          <cTool>
+            <incDir>
+              <pElem>kernel</pElem>
+              <pElem>drivers</pElem>
+              <pElem>.</pElem>
+            </incDir>
+          </cTool>
+        </makeTool>
+      </makefileType>
+      <item path="drivers/ide.c" ex="false" tool="0" flavor2="3">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="drivers/screen.c" ex="false" tool="0" flavor2="3">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="kernel/ApiSyscall.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="kernel/IFat16.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="kernel/MemoryAllocator.c" ex="false" tool="0" flavor2="3">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="kernel/SyscallHandler.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="kernel/gdt.c" ex="false" tool="0" flavor2="3">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="kernel/idt.c" ex="false" tool="0" flavor2="3">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="kernel/irq.c" ex="false" tool="0" flavor2="3">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="kernel/isrs.c" ex="false" tool="0" flavor2="3">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="kernel/keyboard.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="kernel/low_level.c" ex="false" tool="0" flavor2="3">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="kernel/main.c" ex="false" tool="0" flavor2="3">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="kernel/mem.c" ex="false" tool="0" flavor2="3">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="kernel/mem_mgmt.c" ex="false" tool="0" flavor2="3">
+        <cTool flags="0">
+        </cTool>
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

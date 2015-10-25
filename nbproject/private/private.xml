@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <code-assistance-data xmlns="http://www.netbeans.org/ns/make-project-private/1">
+        <code-model-enabled>true</code-model-enabled>
+    </code-assistance-data>
+    <data xmlns="http://www.netbeans.org/ns/make-project-private/1">
+        <activeConfTypeElem>0</activeConfTypeElem>
+        <activeConfIndexElem>0</activeConfIndexElem>
+    </data>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/erick304/Desktop/Proyecto%20Siso%202/OSProject32_Template/kernel/system.h</file>
+            <file>file:/home/erick304/Desktop/Proyecto%20Siso%202/OSProject32_Template/kernel/main.c</file>
+            <file>file:/home/erick304/Desktop/Proyecto%20Siso%202/OSProject32_Template/kernel/ApiSyscall.c</file>
+            <file>file:/home/erick304/Desktop/Proyecto%20Siso%202/OSProject32_Template/kernel/keyboard.h</file>
+            <file>file:/home/erick304/Desktop/Proyecto%20Siso%202/OSProject32_Template/kernel/IFat16.h</file>
+            <file>file:/home/erick304/Desktop/Proyecto%20Siso%202/OSProject32_Template/kernel/MemoryAllocator.c</file>
+            <file>file:/home/erick304/Desktop/Proyecto%20Siso%202/OSProject32_Template/drivers/screen.c</file>
+            <file>file:/home/erick304/Desktop/Proyecto%20Siso%202/OSProject32_Template/kernel/SyscallHandler.c</file>
+            <file>file:/home/erick304/Desktop/Proyecto%20Siso%202/OSProject32_Template/kernel/mem.c</file>
+            <file>file:/home/erick304/Desktop/Proyecto%20Siso%202/OSProject32_Template/kernel/kernel_entry.asm</file>
+            <file>file:/home/erick304/Desktop/Proyecto%20Siso%202/OSProject32_Template/drivers/ide.c</file>
+            <file>file:/home/erick304/Desktop/Proyecto%20Siso%202/OSProject32_Template/kernel/low_level.c</file>
+            <file>file:/home/erick304/Desktop/Proyecto%20Siso%202/OSProject32_Template/kernel/isrs.c</file>
+            <file>file:/home/erick304/Desktop/Proyecto%20Siso%202/OSProject32_Template/kernel/low_level.h</file>
+            <file>file:/home/erick304/Desktop/Proyecto%20Siso%202/OSProject32_Template/kernel/gdt.c</file>
+            <file>file:/home/erick304/Desktop/Proyecto%20Siso%202/OSProject32_Template/kernel/types.h</file>
+            <file>file:/home/erick304/Desktop/Proyecto%20Siso%202/OSProject32_Template/kernel/irq.c</file>
+        </group>
+    </open-files>
+</project-private>

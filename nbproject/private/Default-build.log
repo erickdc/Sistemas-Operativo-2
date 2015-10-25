@@ -1,0 +1,73 @@
+nasm kernel/kernel_entry.asm -f elf -o kernel/kernel_entry.o
+gcc -Ikernel/ -Idrivers/ -m32 -O1 -nostdinc -nostdlib -ffreestanding -fno-stack-protector -std=gnu99 -c kernel/gdt.c -o kernel/gdt.o
+gcc -Ikernel/ -Idrivers/ -m32 -O1 -nostdinc -nostdlib -ffreestanding -fno-stack-protector -std=gnu99 -c kernel/idt.c -o kernel/idt.o
+gcc -Ikernel/ -Idrivers/ -m32 -O1 -nostdinc -nostdlib -ffreestanding -fno-stack-protector -std=gnu99 -c kernel/irq.c -o kernel/irq.o
+gcc -Ikernel/ -Idrivers/ -m32 -O1 -nostdinc -nostdlib -ffreestanding -fno-stack-protector -std=gnu99 -c kernel/isrs.c -o kernel/isrs.o
+gcc -Ikernel/ -Idrivers/ -m32 -O1 -nostdinc -nostdlib -ffreestanding -fno-stack-protector -std=gnu99 -c kernel/low_level.c -o kernel/low_level.o
+gcc -Ikernel/ -Idrivers/ -m32 -O1 -nostdinc -nostdlib -ffreestanding -fno-stack-protector -std=gnu99 -c kernel/main.c -o kernel/main.o
+gcc -Ikernel/ -Idrivers/ -m32 -O1 -nostdinc -nostdlib -ffreestanding -fno-stack-protector -std=gnu99 -c kernel/mem.c -o kernel/mem.o
+gcc -Ikernel/ -Idrivers/ -m32 -O1 -nostdinc -nostdlib -ffreestanding -fno-stack-protector -std=gnu99 -c kernel/mem_mgmt.c -o kernel/mem_mgmt.o
+gcc -Ikernel/ -Idrivers/ -m32 -O1 -nostdinc -nostdlib -ffreestanding -fno-stack-protector -std=gnu99 -c kernel/MemoryAllocator.c -o kernel/MemoryAllocator.o
+kernel/MemoryAllocator.c: In function ‘malloc’:
+kernel/MemoryAllocator.c:3:5: error: unknown type name ‘Header’
+     Header *p, *prevp;
+     ^
+kernel/MemoryAllocator.c:4:5: error: unknown type name ‘Header’
+     Header *moreroce(unsigned);
+     ^
+kernel/MemoryAllocator.c:6:29: error: ‘Header’ undeclared (first use in this function)
+     nunits = (nbytes+sizeof(Header)-1)/sizeof(header) + 1;
+                             ^
+kernel/MemoryAllocator.c:6:29: note: each undeclared identifier is reported only once for each function it appears in
+kernel/MemoryAllocator.c:6:47: error: ‘header’ undeclared (first use in this function)
+     nunits = (nbytes+sizeof(Header)-1)/sizeof(header) + 1;
+                                               ^
+kernel/MemoryAllocator.c:7:18: error: ‘freep’ undeclared (first use in this function)
+     if ((prevp = freep) == NULL) {
+                  ^
+kernel/MemoryAllocator.c:7:28: error: ‘NULL’ undeclared (first use in this function)
+     if ((prevp = freep) == NULL) {
+                            ^
+kernel/MemoryAllocator.c:9:5: error: ‘base’ undeclared (first use in this function)
+     base.s.ptr = freeptr = prevptr = &base;
+     ^
+kernel/MemoryAllocator.c:9:18: error: ‘freeptr’ undeclared (first use in this function)
+     base.s.ptr = freeptr = prevptr = &base;
+                  ^
+kernel/MemoryAllocator.c:9:28: error: ‘prevptr’ undeclared (first use in this function)
+     base.s.ptr = freeptr = prevptr = &base;
+                            ^
+kernel/MemoryAllocator.c:12:19: error: request for member ‘s’ in something not a structure or union
+     for (p = prevp->s.ptr; ; prevp = p, p = p->s.ptr) {
+                   ^
+kernel/MemoryAllocator.c:12:46: error: request for member ‘s’ in something not a structure or union
+     for (p = prevp->s.ptr; ; prevp = p, p = p->s.ptr) {
+                                              ^
+kernel/MemoryAllocator.c:13:10: error: request for member ‘s’ in something not a structure or union
+     if (p->s.size >= nunits) { /* big enough */
+          ^
+kernel/MemoryAllocator.c:14:10: error: request for member ‘s’ in something not a structure or union
+     if (p->s.size == nunits) /* exactly */
+          ^
+kernel/MemoryAllocator.c:15:10: error: request for member ‘s’ in something not a structure or union
+     prevp->s.ptr = p->s.ptr;
+          ^
+kernel/MemoryAllocator.c:15:21: error: request for member ‘s’ in something not a structure or union
+     prevp->s.ptr = p->s.ptr;
+                     ^
+kernel/MemoryAllocator.c:18:6: error: request for member ‘s’ in something not a structure or union
+     p->s.size -= nunits;
+      ^
+kernel/MemoryAllocator.c:19:11: error: request for member ‘s’ in something not a structure or union
+     p += p->s.size;
+           ^
+kernel/MemoryAllocator.c:20:6: error: request for member ‘s’ in something not a structure or union
+     p->s.size = nunits;
+      ^
+kernel/MemoryAllocator.c:26:5: warning: implicit declaration of function ‘morecore’ [-Wimplicit-function-declaration]
+     if ((p = morecore(nunits)) == NULL)
+     ^
+kernel/MemoryAllocator.c:26:12: warning: assignment makes pointer from integer without a cast [enabled by default]
+     if ((p = morecore(nunits)) == NULL)
+            ^
+make: *** [kernel/MemoryAllocator.o] Error 1

@@ -1,0 +1,153 @@
+called: gcc
+	/home/erick304/Desktop/Proyecto Siso 2/OSProject32_Template
+	gcc
+	-Ikernel/
+	-Idrivers/
+	-m32
+	-O1
+	-nostdinc
+	-nostdlib
+	-ffreestanding
+	-fno-stack-protector
+	-std=gnu99
+	-c
+	kernel/gdt.c
+	-o
+	kernel/gdt.o
+
+called: gcc
+	/home/erick304/Desktop/Proyecto Siso 2/OSProject32_Template
+	gcc
+	-Ikernel/
+	-Idrivers/
+	-m32
+	-O1
+	-nostdinc
+	-nostdlib
+	-ffreestanding
+	-fno-stack-protector
+	-std=gnu99
+	-c
+	kernel/idt.c
+	-o
+	kernel/idt.o
+
+called: gcc
+	/home/erick304/Desktop/Proyecto Siso 2/OSProject32_Template
+	gcc
+	-Ikernel/
+	-Idrivers/
+	-m32
+	-O1
+	-nostdinc
+	-nostdlib
+	-ffreestanding
+	-fno-stack-protector
+	-std=gnu99
+	-c
+	kernel/irq.c
+	-o
+	kernel/irq.o
+
+called: gcc
+	/home/erick304/Desktop/Proyecto Siso 2/OSProject32_Template
+	gcc
+	-Ikernel/
+	-Idrivers/
+	-m32
+	-O1
+	-nostdinc
+	-nostdlib
+	-ffreestanding
+	-fno-stack-protector
+	-std=gnu99
+	-c
+	kernel/isrs.c
+	-o
+	kernel/isrs.o
+
+called: gcc
+	/home/erick304/Desktop/Proyecto Siso 2/OSProject32_Template
+	gcc
+	-Ikernel/
+	-Idrivers/
+	-m32
+	-O1
+	-nostdinc
+	-nostdlib
+	-ffreestanding
+	-fno-stack-protector
+	-std=gnu99
+	-c
+	kernel/low_level.c
+	-o
+	kernel/low_level.o
+
+called: gcc
+	/home/erick304/Desktop/Proyecto Siso 2/OSProject32_Template
+	gcc
+	-Ikernel/
+	-Idrivers/
+	-m32
+	-O1
+	-nostdinc
+	-nostdlib
+	-ffreestanding
+	-fno-stack-protector
+	-std=gnu99
+	-c
+	kernel/main.c
+	-o
+	kernel/main.o
+
+called: gcc
+	/home/erick304/Desktop/Proyecto Siso 2/OSProject32_Template
+	gcc
+	-Ikernel/
+	-Idrivers/
+	-m32
+	-O1
+	-nostdinc
+	-nostdlib
+	-ffreestanding
+	-fno-stack-protector
+	-std=gnu99
+	-c
+	kernel/mem.c
+	-o
+	kernel/mem.o
+
+called: gcc
+	/home/erick304/Desktop/Proyecto Siso 2/OSProject32_Template
+	gcc
+	-Ikernel/
+	-Idrivers/
+	-m32
+	-O1
+	-nostdinc
+	-nostdlib
+	-ffreestanding
+	-fno-stack-protector
+	-std=gnu99
+	-c
+	kernel/mem_mgmt.c
+	-o
+	kernel/mem_mgmt.o
+
+called: gcc
+	/home/erick304/Desktop/Proyecto Siso 2/OSProject32_Template
+	gcc
+	-Ikernel/
+	-Idrivers/
+	-m32
+	-O1
+	-nostdinc
+	-nostdlib
+	-ffreestanding
+	-fno-stack-protector
+	-std=gnu99
+	-c
+	kernel/MemoryAllocator.c
+	-o
+	kernel/MemoryAllocator.o
+

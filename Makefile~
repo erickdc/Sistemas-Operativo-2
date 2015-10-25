@@ -1,0 +1,51 @@
+# Automatically expand to a list of existing files that
+# match the patterns
+C_SOURCES = $(wildcard kernel/*.c drivers/*.c)
+HEADERS = $(wildcard kernel/*.h drivers/*.h)
+OBJ = ${C_SOURCES:.c=.o}
+INCLUDE = -Ikernel/ -Idrivers/
+
+C_FLAGS = -m32 -O1 -nostdinc -nostdlib -ffreestanding -fno-stack-protector -std=gnu99
+CC = gcc
+# CC = ~/develop/llvm/bin/clang
+
+all: os-image
+
+# Run bochs to simulate booting of our code.
+run: all
+	bochs -f opsys.bxrc -q
+
+os-image: kernel.elf
+	#cat $^ > os-image
+	#dd if=os-image of=hd1.img conv=notrunc
+	cp kernel.elf /media/hd1/
+	sync
+	touch os-image
+
+# Link kernel object files into one binary , making sure the
+# entry code is right at the start of the binary .
+kernel.elf : kernel/kernel_entry.o ${OBJ}
+	ld -m elf_i386 -T link.ld -o $@ $^
+prueba.elf : prueba.o ${OBJ}
+	ld -m elf_i386 -T link.ld -o $@ $^
+%.o : %.c
+	${CC} ${INCLUDE} ${C_FLAGS} -c $< -o $@
+
+%.o : %.asm
+	nasm $< -f elf -o $@
+
+%.bin : %.asm
+	nasm $< -f bin -I 'boot/' -o $@
+
+# Clear away some of the generated files .
+clean:
+	rm -fr *.o *.bin *.dis
+	rm -fr kernel/*.o boot/*.bin drivers/*.o
+	rm -f kernel.elf
+	rm -f os-image
+
+mount: 
+	sudo mount -o loop,offset=1048576,uid=erick304 hd1.img /media/hd1
+# Disassemble our kernel - might be useful for debugging .
+kernel_elf.asm: kernel.elf
+	objdump -M intel -S $< > $@

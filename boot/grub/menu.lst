@@ -1,0 +1,13 @@
+default=0
+timeout=30
+
+root (hd0,0)
+
+title=Dev Operating System II
+    kernel /kernel.elf
+    boot
+
+title=User
+    kernel /kernel.elf
+    modules /modules/ProgramaTest
+    boot
